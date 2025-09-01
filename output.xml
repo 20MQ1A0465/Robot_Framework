@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.6 on win32)" generated="2025-09-01T15:27:20.443796" rpa="false" schemaversion="5">
+<suite id="s1" name="web frame Project" source="C:\Users\lnavyasr\PycharmProjects\web_frame_Project">
+<suite id="s1-s1" name="Testcases" source="C:\Users\lnavyasr\PycharmProjects\web_frame_Project\testcases">
+<suite id="s1-s1-s1" name="Cart Test" source="C:\Users\lnavyasr\PycharmProjects\web_frame_Project\testcases\cart_test.robot">
+<test id="s1-s1-s1-t1" name="Add and remove product of Cart" line="9">
+<kw name="Open SwagLabs" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-09-01T15:27:21.095119" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-09-01T15:27:21.094814" elapsed="3.844734"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-09-01T15:27:24.939879" elapsed="0.042768"/>
+</kw>
+<status status="PASS" start="2025-09-01T15:27:21.093769" elapsed="3.889106"/>
+</kw>
+<kw name="Login To SwagLabs" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-01T15:27:24.985021" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-01T15:27:24.984471" elapsed="0.201441"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-09-01T15:27:25.186826" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-01T15:27:25.186344" elapsed="0.139557"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-01T15:27:25.326303" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-01T15:27:25.326099" elapsed="0.130777"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id=inventory_container</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-09-01T15:27:25.457297" elapsed="0.018051"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASS}</arg>
+<status status="PASS" start="2025-09-01T15:27:24.983832" elapsed="0.491680"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-09-01T15:27:26.476714" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-09-01T15:27:25.476221" elapsed="1.000660"/>
+</kw>
+<kw name="Add Product To Cart" owner="cart_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-09-01T15:27:26.478139" level="INFO">Clicking button 'xpath=//button[@data-test='add-to-cart-sauce-labs-backpack']'.</msg>
+<arg>xpath=//button[@data-test='add-to-cart-sauce-labs-backpack']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-01T15:27:26.477955" elapsed="0.080634"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-09-01T15:27:26.559943" level="INFO">Clicking element 'id=shopping_cart_container'.</msg>
+<arg>${CART_ICON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-09-01T15:27:26.559199" elapsed="0.059456"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-09-01T15:27:26.794253" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-138.png"&gt;&lt;img src="selenium-screenshot-138.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-09-01T15:27:26.794553" level="FAIL">Page should have contained element 'class=cart_item' but did not.</msg>
+<arg>${CART_ITEM}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-09-01T15:27:26.619168" elapsed="0.181420">Page should have contained element 'class=cart_item' but did not.</status>
+</kw>
+<status status="FAIL" start="2025-09-01T15:27:26.477636" elapsed="0.323298">Page should have contained element 'class=cart_item' but did not.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-01T15:27:26.801688" elapsed="0.000075"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>class=cart_item</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-09-01T15:27:26.802583" elapsed="0.000050"/>
+</kw>
+<kw name="Remove Product From Cart" owner="cart_keywords">
+<status status="NOT RUN" start="2025-09-01T15:27:26.803361" elapsed="0.000067"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-09-01T15:27:26.804084" elapsed="0.000048"/>
+</kw>
+<kw name="Page Should Not Contain Element" owner="SeleniumLibrary">
+<arg>class=cart_item</arg>
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<status status="NOT RUN" start="2025-09-01T15:27:26.804855" elapsed="0.000042"/>
+</kw>
+<kw name="Close SwagLabs" owner="resources">
+<status status="NOT RUN" start="2025-09-01T15:27:26.805875" elapsed="0.000062"/>
+</kw>
+<status status="FAIL" start="2025-09-01T15:27:21.092845" elapsed="5.713883">Page should have contained element 'class=cart_item' but did not.</status>
+</test>
+<status status="FAIL" start="2025-09-01T15:27:20.490706" elapsed="6.317711"/>
+</suite>
+<status status="FAIL" start="2025-09-01T15:27:20.488280" elapsed="6.322070"/>
+</suite>
+<status status="FAIL" start="2025-09-01T15:27:20.447603" elapsed="6.364749"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="web frame Project" id="s1" pass="0" fail="1" skip="0">web frame Project</stat>
+<stat name="Testcases" id="s1-s1" pass="0" fail="1" skip="0">web frame Project.Testcases</stat>
+<stat name="Cart Test" id="s1-s1-s1" pass="0" fail="1" skip="0">web frame Project.Testcases.Cart Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
